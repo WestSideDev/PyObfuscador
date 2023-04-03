@@ -1,2 +1,0 @@
-#!/bin/sh
-apt update;apt upgrade;apt install ruby;apt install figlet;apt install python;gem install lolcat;pip install tqdm;clear;echo "nao apague esse arquivo" >> .config.txt
