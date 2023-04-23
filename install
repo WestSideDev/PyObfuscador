@@ -16,7 +16,7 @@ echo $VD"["$A"2"$VD"]"$A"Termux"
 echo -n $VD">>>"$F
 read op
 case $op in
-	1)linux;;
-	2)termux;;
-	*)clear;exit;;
+   1)linux;;
+   2)termux;;
+   *)clear;exit;;
 esac
