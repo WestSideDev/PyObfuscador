@@ -1,19 +1,27 @@
-#!/bin/sh
+#!/bin/bash
 linux(){
-   apt update && apt upgrade && apt install ruby && apt install figlet && apt install python3.11 && gem install lolcat && pip install tqdm && clear && echo 'não apague esse arquivo' >> .config.txt
+   if [[ "$(uname -o)" == "GNU/Linux" ]];then
+      apt update && apt upgrade && apt install ruby && apt install figlet && apt install python3.11 && gem install lolcat && pip install tqdm && clear && echo 'não apague esse arquivo' >> .config.txt
+   else
+      clear && exit
+   fi
 }
 termux(){
-   pkg update && pkg upgrade && pkg install ruby && pkg install figlet && pkg install python && gem install lolcat && pip install tqdm && clear && echo 'não apague esse arquivo' >> .config.txt
+   if [[ "$(uname -o)" == "Android" ]];then
+      pkg update && pkg upgrade && pkg install ruby && pkg install figlet && pkg install python && gem install lolcat && pip install tqdm && clear && echo 'não apague esse arquivo' >> .config.txt
+   else
+      clear && exit
+   fi
 }
 
 F="\033[m"
 A="\033[01;33m"
 VD="\033[01;32m"
 clear 
-echo $A"Qual seu SO?"
-echo $VD"["$A"1"$VD"]"$A"Linux"
-echo $VD"["$A"2"$VD"]"$A"Termux"
-echo -n $VD">>>"$F
+echo -e $A"Qual seu SO?"
+echo -e $VD"["$A"1"$VD"]"$A"Linux"
+echo -e $VD"["$A"2"$VD"]"$A"Termux"
+echo -n -e $VD">>>"$F
 read op
 case $op in
    1)linux;;
