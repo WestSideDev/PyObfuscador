@@ -1,14 +1,14 @@
 #!/bin/bash
 linux(){
    if [[ "$(uname -o)" == "GNU/Linux" ]];then
-      apt update && apt upgrade && apt install ruby && apt install figlet && apt install python3.11 && gem install lolcat && pip install tqdm && clear && echo 'QFdlc3RTaWRlRGV2Cg==' >> .config.txt
+      apt update && apt upgrade && apt install ruby && apt install figlet && apt install python3.11 && gem install lolcat && pip install tqdm requests && clear && echo 'QFdlc3RTaWRlRGV2Cg==' >> .config.txt
    else
       clear && exit
    fi
 }
 termux(){
    if [[ "$(uname -o)" == "Android" ]];then
-      pkg update && pkg upgrade && pkg install ruby && pkg install figlet && pkg install python && gem install lolcat && pip install tqdm && clear && echo 'QFdlc3RTaWRlRGV2Cg==' >> .config.txt
+      pkg update && pkg upgrade && pkg install ruby && pkg install figlet && pkg install python && gem install lolcat && pip install tqdm requests && clear && echo 'QFdlc3RTaWRlRGV2Cg==' >> .config.txt
    else
       clear && exit
    fi
